@@ -1,6 +1,6 @@
-
-const studentArea = new StudentArea('student-list');
-const detailsArea = new DetailsArea('details');
+const manager = new Manager();
+const studentArea = new StudentArea('student-list', manager);
+const detailsArea = new DetailsArea('details', manager);
 
 const array = [
     {
@@ -58,4 +58,5 @@ const array = [
 
 for(const element of array){
     const stud = new Student(element.name, element.average, element.comment, element.bad);
+    manager.add(stud);
 }
