@@ -1,3 +1,7 @@
+
+const studentArea = new StudentArea('student-list');
+const detailsArea = new DetailsArea('details');
+
 const array = [
     {
         "name": "Alice",
