@@ -16,11 +16,16 @@ class Manager{
     }
 
     add(student){
-        this.#array.push(student);
-        this.#addCallback(student);
+        this.#array.push(student);   
     }
 
     select(student){
         this.#selectCallback(student);
+    }
+
+    render(){
+        for(const student of this.#array){
+            this.#addCallback(student);
+        }
     }
 }
