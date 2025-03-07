@@ -26,6 +26,15 @@ class Manager{
         this.#addAdminCallback(student);
     }
 
+    generateTextForExport(){
+        const result = []
+        for(const student of this.#array){
+            const bad = student.bad ? '1' : '0'
+            result.push(`${student.name};${student.average};${student.comment};${bad}`)
+        }
+        return result.join('\n');
+    }
+
     select(student){
         this.#selectCallback(student);
     }

@@ -1,4 +1,4 @@
-<diagram program="umletino" version="15.1"><zoom_level>5</zoom_level><element><id>UMLClass</id><coordinates><x>0</x><y>325</y><w>210</w><h>55</h></coordinates><panel_attributes>Student
+<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>0</x><y>210</y><w>420</w><h>110</h></coordinates><panel_attributes>Student
 --
 &lt;&lt;get&gt;&gt; - average: number
 &lt;&lt;get&gt;&gt; - comment: String
@@ -6,38 +6,40 @@
 &lt;&lt;get&gt;&gt; - bad: boolean
 --
 + constructor(name: String, average: Number, comment: String, bad: boolean?)
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>340</x><y>460</y><w>180</w><h>95</h></coordinates><panel_attributes>Manager
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>680</x><y>480</y><w>360</w><h>210</h></coordinates><panel_attributes>Manager
 --
 - currentQuestionNumber: number
 - selectCallback: SelectCallback
 - addCallback: AddCallback
+- addAdminCallback: AddAdminCallback
 --
 + constructor(Student[])
 + setAddCallback(cb: SelectCallback) : void
 + setSelectCallback(cb: AddCallback): void
++ setAddAdminCallback(AddAdminCallback):void
 + add(student: Student): void
 + select(student: Student): void
-+ render(): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>205</x><y>350</y><w>145</w><h>185</h></coordinates><panel_attributes>lt=&lt;-&gt;&gt;&gt;&gt;&gt;
++ render(): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>410</x><y>260</y><w>290</w><h>370</h></coordinates><panel_attributes>lt=&lt;-&gt;&gt;&gt;&gt;&gt;
 array
-m1= *</panel_attributes><additional_attributes>10;10;130;10;130;350;270;350</additional_attributes></element><element><id>UMLClass</id><coordinates><x>350</x><y>610</y><w>150</w><h>55</h></coordinates><panel_attributes>Area
+m1= *</panel_attributes><additional_attributes>10;10;130;10;130;350;270;350</additional_attributes></element><element><id>UMLClass</id><coordinates><x>700</x><y>780</y><w>300</w><h>110</h></coordinates><panel_attributes>Area
 --
 &lt;&lt;get&gt;&gt; - div: HtmlDivElement
 --
 + constructor(cssClass: string)
 -getContainer(): HtmlDivElement
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>160</x><y>680</y><w>155</w><h>55</h></coordinates><panel_attributes>DetailsArea
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>320</x><y>920</y><w>310</w><h>110</h></coordinates><panel_attributes>DetailsArea
 --
 + constructor(className: sring, manager: Manager)
 - onClickStudentCard(student: Student): EventListenerCallback
-- addCallback(): AddCallback</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>560</x><y>675</y><w>150</w><h>65</h></coordinates><panel_attributes>StudentArea
+- addCallback(): AddCallback</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1120</x><y>910</y><w>300</w><h>130</h></coordinates><panel_attributes>StudentArea
 --
 + constructor(className: sring, manager: Manager)
-- selectCallback(): SelectCallback</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>235</x><y>550</y><w>150</w><h>140</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>280;10;280;60;10;60;10;260</additional_attributes></element><element><id>Relation</id><coordinates><x>485</x><y>550</y><w>175</w><h>135</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;10;70;330;70;330;250</additional_attributes></element><element><id>Relation</id><coordinates><x>425</x><y>660</y><w>145</w><h>50</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;80;270;80</additional_attributes></element><element><id>Relation</id><coordinates><x>310</x><y>660</y><w>110</w><h>50</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>200;10;200;80;10;80</additional_attributes></element><element><id>UMLClass</id><coordinates><x>650</x><y>450</y><w>325</w><h>95</h></coordinates><panel_attributes>FormController
+- selectCallback(): SelectCallback</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>470</x><y>680</y><w>300</w><h>260</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>280;10;280;40;10;40;10;240</additional_attributes></element><element><id>Relation</id><coordinates><x>970</x><y>680</y><w>350</w><h>250</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;10;50;330;50;330;230</additional_attributes></element><element><id>Relation</id><coordinates><x>850</x><y>880</y><w>290</w><h>100</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;80;270;80</additional_attributes></element><element><id>Relation</id><coordinates><x>620</x><y>880</y><w>220</w><h>100</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>200;10;200;80;10;80</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1300</x><y>460</y><w>650</w><h>190</h></coordinates><panel_attributes>FormController
 --
 - submitCallback(): EventListenerCallback
 - validateFields(): boolean
 - getValueObject(): {studentname: string, studentaverage: string, studentcomment: string, studentbad?: boolean}
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1075</x><y>325</y><w>225</w><h>110</h></coordinates><panel_attributes>FormField
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>2150</x><y>210</y><w>450</w><h>220</h></coordinates><panel_attributes>FormField
 --
 &lt;&lt;get&gt;&gt; - id: string
 &lt;&lt;get&gt;&gt; - optional: boolean
@@ -49,8 +51,10 @@ m1= *</panel_attributes><additional_attributes>10;10;130;10;130;350;270;350</add
 &lt;&lt;set&gt;&gt;error(value:string)
 --
 + constructor(id: string, labelContent: string, type: string, optional?: boolean)
-+ getDivElement(): HtmlDivElement</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>515</x><y>480</y><w>145</w><h>45</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;70;170;70;170;10;270;10</additional_attributes></element><element><id>Relation</id><coordinates><x>970</x><y>360</y><w>115</w><h>145</h></coordinates><panel_attributes>lt=&lt;-&gt;&gt;&gt;&gt;&gt;
++ getDivElement(): HtmlDivElement</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1030</x><y>520</y><w>290</w><h>90</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;70;170;70;170;10;270;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1940</x><y>280</y><w>230</w><h>290</h></coordinates><panel_attributes>lt=&lt;-&gt;&gt;&gt;&gt;&gt;
 formFieldArray
-m1= *</panel_attributes><additional_attributes>210;10;80;10;80;270;10;270</additional_attributes></element><element><id>UMLClass</id><coordinates><x>595</x><y>290</y><w>125</w><h>25</h></coordinates><panel_attributes>Table
+m1= *</panel_attributes><additional_attributes>210;10;80;10;80;270;10;270</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1190</x><y>140</y><w>330</w><h>110</h></coordinates><panel_attributes>Table
 --
-+ constructor(manager: Manager)</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>515</x><y>300</y><w>90</w><h>195</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;370;60;370;60;10;160;10</additional_attributes></element></diagram>
+- adminCallback(tbody: HtmlDivElement): AddAdminCallback
+--
++ constructor(manager: Manager)</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1030</x><y>160</y><w>180</w><h>390</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;370;60;370;60;10;160;10</additional_attributes></element></diagram>
