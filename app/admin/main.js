@@ -6,4 +6,5 @@ const formFieldConfiguration = [
 ]
 
 const manager = new Manager();
+const table = new Table(manager);
 const formController = new FormController(manager, formFieldConfiguration);

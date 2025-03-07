@@ -2,9 +2,11 @@ class Manager{
     #array;
     #selectCallback;
     #addCallback;
+    #addAdminCallback;
 
     constructor(){
         this.#array = [];
+        this.#addAdminCallback = () => {}
     }
 
     setAddCallback(callback){
@@ -15,8 +17,13 @@ class Manager{
         this.#selectCallback=callback;
     }
 
+    setAddAdminCallback(callback){
+        this.#addAdminCallback = callback;
+    }
+
     add(student){
         this.#array.push(student);   
+        this.#addAdminCallback(student);
     }
 
     select(student){
