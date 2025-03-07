@@ -78,5 +78,42 @@ const Gomszab = {
             div.appendChild(document.createElement('br'))
         }
         return div;
+    },
+
+    /**
+     * 
+     * Létrehoz egy táblázatot egy headerrel, és visszatér a tbody-val
+     * 
+     * @param {string[]} headerTextlist a fejléc cellák tartalma
+     * @returns {HTMLTableSectionElement} a táblázat törzse.
+     */
+    makeTableWithHeader(headerTextlist){
+        const table = document.createElement('table');
+        document.body.appendChild(table)
+        const header = document.createElement('thead');
+        table.appendChild(header);
+        const theadRow = document.createElement('tr');
+        header.appendChild(theadRow);
+        for(const text of headerTextlist){
+            const th = document.createElement('th');
+            th.innerText = text;
+            theadRow.appendChild(th);
+        }
+        const tbody = document.createElement('tbody');
+        table.appendChild(tbody);
+        return tbody;
+    },
+
+    /**
+     * 
+     * Csinál egy cellát a megadott tartalommal és hozzáfűzi a megadott ttáblázatsorhoz
+     * 
+     * @param {HTMLTableCellElement} tableRow a táblázat sora, amihez fűzzük az elemet
+     * @param {string} content a cella tartalma
+     */
+    makeCellToRow: (tableRow, content) => {
+        const tableCellAnswer = document.createElement('td');
+        tableCellAnswer.textContent = content;
+        tableRow.appendChild(tableCellAnswer);
     }
 }
